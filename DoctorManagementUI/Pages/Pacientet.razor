@@ -1,0 +1,44 @@
+﻿@page "/pacientet"
+@attribute [Authorize]
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h3>Pacientet</h3>
+        </div>
+        <div class="col-2 align-content-center">
+            <a class="font-weight-bold link-dark" href="addpacient">Add Pacient</a>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Patient Id</th>
+            <th>PersonalNumber</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Birthdate</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pc in Pacient)
+        {
+            <tr>
+                <td>@pc.PatientId</td>
+                <td>@pc.PersonalNumber</td>
+                <td>@pc.FirstName</td>
+                <td>@pc.LastName</td>
+                <td>@pc.Birthdate</td>
+                <td>@pc.Gender</td>
+                <td>@pc.Email</td>
+                <td>@pc.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>

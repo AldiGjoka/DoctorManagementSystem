@@ -1,0 +1,17 @@
+﻿@page "/"
+@using DoctorManagementUI.Components
+
+<PageTitle>Index</PageTitle>
+<AuthorizeView>
+    <Authorized>
+        <h1>Hello, @context.User.Identity.Name</h1>
+
+        <AppointmentComponent Appointment=appointments />
+    </Authorized>
+    <NotAuthorized>
+        <h1>Hello, Guest</h1>
+        <p>Login or Register</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+

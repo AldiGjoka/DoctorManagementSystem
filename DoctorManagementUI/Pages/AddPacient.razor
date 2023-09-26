@@ -1,0 +1,118 @@
+﻿@page "/addpacient"
+
+<h3 class="mb-5">New Pacient</h3>
+
+@Message
+
+<EditForm Model="@Pacient" OnValidSubmit="@HandleValidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient personal number:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.PersonalNumber"
+                       placeholder="Enter patient personal number"></InputText>
+            <ValidationMessage For="@(() => Pacient.PersonalNumber)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient name:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.FirstName" placeholder="Enter patient name"></InputText>
+            <ValidationMessage For="@(() => Pacient.FirstName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient surname:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.LastName" placeholder="Enter patient surname"></InputText>
+            <ValidationMessage For="@(() => Pacient.LastName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient birthdate:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.Birthdate" placeholder="Enter patient birthdate"></InputText>
+            <ValidationMessage For="@(() => Pacient.Birthdate)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient gender:</label>
+        <div class="col-sm-5">
+            <InputNumber id="name" class="form-control" @bind-Value="@Pacient.Gender" placeholder="Enter patient gender"></InputNumber>
+            <ValidationMessage For="@(() => Pacient.Gender)" />
+        </div>
+    </div>
+    
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient email:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.Email" placeholder="Enter patient email"></InputText>
+            <ValidationMessage For="@(() => Pacient.Email)" />  
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient PhoneNumber:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.PhoneNumber" placeholder="Enter patient PhoneNumber"></InputText>
+            <ValidationMessage For="@(() => Pacient.PhoneNumber)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient State:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.State" placeholder="Enter patient State"></InputText>
+            <ValidationMessage For="@(() => Pacient.State)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient City:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.City" placeholder="Enter patient City"></InputText>
+            <ValidationMessage For="@(() => Pacient.City)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient Country:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.Country" placeholder="Enter patient Country"></InputText>
+            <ValidationMessage For="@(() => Pacient.Country)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient StreetName:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.StreetName" placeholder="Enter patient StreetName"></InputText>
+            <ValidationMessage For="@(() => Pacient.StreetName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Patient PostalCode:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@Pacient.PostalCode" placeholder="Enter patient PostalCode"></InputText>
+            <ValidationMessage For="@(() => Pacient.PostalCode)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2"></div>
+
+
+
+
+
+
+
+    <button type="submit" class="submit-button mt-3">Save Patient</button>
+</EditForm>

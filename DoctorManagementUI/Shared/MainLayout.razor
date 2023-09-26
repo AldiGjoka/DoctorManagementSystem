@@ -1,0 +1,41 @@
+﻿@using DoctorManagementUI.Auth
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <AuthorizeView>
+                <Authorized>
+                    <button class="btn btn-primary" @onclick="LogOut">Log out</button>
+                </Authorized>
+                <NotAuthorized>
+                    <button class="btn btn-primary" @onclick="LogIn">Log in</button>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+
+@code {
+
+    protected async void LogOut()
+    {
+        await ((CustomAuthenticationStateProvider)AuthStateProvider).UpdateAuthenticationState(null);
+    }
+
+    protected void LogIn()
+    {
+        NavigationManager.NavigateTo("login");
+    }
+}

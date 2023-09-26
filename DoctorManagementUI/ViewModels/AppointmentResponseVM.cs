@@ -1,0 +1,10 @@
+﻿namespace DoctorManagementUI.ViewModels
+{
+    public class AppointmentResponseVM
+    {
+        public int PatientId { get; set; }
+        public DateTime AppointmentDate { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+    }
+}
