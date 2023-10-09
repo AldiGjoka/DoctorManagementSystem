@@ -6,9 +6,9 @@ using System.Net.Http.Json;
 
 namespace DoctorManagementUI.Pages
 {
-    public partial class Pacientet
+    public partial class PacientDetails
     {
-        public List<PacientetResponseVM> Pacient;
+        public PacientetResponseVM Pacient;
 
         [Inject]
         public HttpClient _httpClient { get; set; }
@@ -19,28 +19,37 @@ namespace DoctorManagementUI.Pages
         [Inject]
         NavigationManager _navigationManager { get; set; }
 
+        [Parameter]
+        public string PacientId { get; set; }
+
+
         protected override async Task OnInitializedAsync()
         {
-            Pacient = new List<PacientetResponseVM>();
+            Pacient = new PacientetResponseVM();
 
             try
             {
                 var doctorId = await ((CustomAuthenticationStateProvider)authenticationStateProvider).GetDoctorId();
 
-                var response = await _httpClient.GetFromJsonAsync<List<PacientetResponseVM>>($"https://localhost:7137/api/patient/{doctorId}");
+                var response = await _httpClient.GetFromJsonAsync<PacientetResponseVM>($"https://localhost:7137/api/patient/{doctorId}/{PacientId}");
 
                 Pacient = response;
             }
             catch (Exception ex)
             {
-                throw ex;
+
+                throw;
             }
-            
         }
 
-        protected void HandleViewButtonClick(int patientId)
+        protected void HandleShtoReceteClick(int patientId)
         {
-            _navigationManager.NavigateTo($"/pacientet/{patientId}");
+            _navigationManager.NavigateTo($"/recete/{patientId}");
+        }
+
+        protected void HandleShikoRecetatClick(int patientId)
+        {
+            _navigationManager.NavigateTo($"/recete/details/{patientId}");
         }
     }
 }

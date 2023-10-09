@@ -1,0 +1,66 @@
+﻿@page "/recete/{pacientId}"
+@attribute [Authorize]
+
+<h3 class="mb-5">New Recete</h3>
+
+<EditForm Model="@Receta" OnValidSubmit="@HandleValidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+    <div class="row mb-3 ms-2">
+        <label for="MedicationName" class="col-sm-3 form-label">Medication Name:</label>
+        <div class="col-sm-5">
+            <InputText id="MedicationName" class="form-control" @bind-Value="@Receta.Prescriptions[0].MedicationName" placeholder="Medication Name"></InputText>
+            <ValidationMessage For="@(() => Receta.Prescriptions[0].MedicationName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="Dosage" class="col-sm-3 form-label">Dosage:</label>
+        <div class="col-sm-5">
+            <InputText id="Dosage" class="form-control" @bind-Value="@Receta.Prescriptions[0].Dosage" placeholder="Dosage"></InputText>
+            <ValidationMessage For="@(() => Receta.Prescriptions[0].Dosage)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="Instructions" class="col-sm-3 form-label">Medication Name:</label>
+        <div class="col-sm-5">
+            <InputText id="Instructions" class="form-control" @bind-Value="@Receta.Prescriptions[0].Instructions" placeholder="Instructions:"></InputText>
+            <ValidationMessage For="@(() => Receta.Prescriptions[0].Instructions)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="MedicationName" class="col-sm-3 form-label">Medication Name:</label>
+        <div class="col-sm-5">
+            <InputText id="MedicationName" class="form-control" @bind-Value="@Receta.Prescriptions[1].MedicationName" placeholder="Medication Name"></InputText>
+            <ValidationMessage For="@(() => Receta.Prescriptions[1].MedicationName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="Dosage" class="col-sm-3 form-label">Dosage:</label>
+        <div class="col-sm-5">
+            <InputText id="Dosage" class="form-control" @bind-Value="@Receta.Prescriptions[1].Dosage" placeholder="Dosage"></InputText>
+            <ValidationMessage For="@(() => Receta.Prescriptions[1].Dosage)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="Instructions" class="col-sm-3 form-label">Medication Name:</label>
+        <div class="col-sm-5">
+            <InputText id="Instructions" class="form-control" @bind-Value="@Receta.Prescriptions[1].Instructions" placeholder="Instructions:"></InputText>
+            <ValidationMessage For="@(() => Receta.Prescriptions[1].Instructions)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2"></div>
+
+    <button type="submit" class="submit-button mt-3">Save Patient</button>
+
+</EditForm>
+
+
+

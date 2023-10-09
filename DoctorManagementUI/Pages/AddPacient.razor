@@ -1,4 +1,5 @@
 ﻿@page "/addpacient"
+@attribute [Authorize]
 
 <h3 class="mb-5">New Pacient</h3>
 
@@ -49,12 +50,12 @@
             <ValidationMessage For="@(() => Pacient.Gender)" />
         </div>
     </div>
-    
+
     <div class="row mb-3 ms-2">
         <label for="name" class="col-sm-3 form-label">Patient email:</label>
         <div class="col-sm-5">
             <InputText id="name" class="form-control" @bind-Value="@Pacient.Email" placeholder="Enter patient email"></InputText>
-            <ValidationMessage For="@(() => Pacient.Email)" />  
+            <ValidationMessage For="@(() => Pacient.Email)" />
         </div>
     </div>
 
@@ -107,12 +108,6 @@
     </div>
 
     <div class="row mb-3 ms-2"></div>
-
-
-
-
-
-
 
     <button type="submit" class="submit-button mt-3">Save Patient</button>
 </EditForm>

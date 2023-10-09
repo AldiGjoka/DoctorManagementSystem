@@ -1,0 +1,35 @@
+﻿@page "/recete/details/{patientId}"
+
+@foreach (var recet in Recete)
+{
+    <h3>@recet.Date</h3>
+
+    @foreach (var pres in recet.Prescriptions)
+    {
+        <div class="row mb-3 ms-2">
+            <label for="name" class="col-sm-3 form-label">Medication Name:</label>
+            <div class="col-sm-5">
+                @pres.MedicationName
+            </div>
+        </div>
+
+        <div class="row mb-3 ms-2">
+            <label for="name" class="col-sm-3 form-label">Dosage:</label>
+            <div class="col-sm-5">
+                @pres.Dosage
+            </div>
+        </div>
+
+        <div class="row mb-3 ms-2">
+            <label for="name" class="col-sm-3 form-label">Instructions:</label>
+            <div class="col-sm-5">
+                @pres.Instructions
+            </div>
+        </div>
+    }
+
+
+}
+
+
+

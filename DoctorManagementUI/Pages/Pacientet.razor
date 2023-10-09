@@ -24,6 +24,7 @@
             <th>Gender</th>
             <th>Email</th>
             <th>PhoneNumber</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +39,7 @@
                 <td>@pc.Gender</td>
                 <td>@pc.Email</td>
                 <td>@pc.PhoneNumber</td>
+                <td><button class="btn btn-primary" @onclick="(() => HandleViewButtonClick(pc.PatientId))">View</button></td>
             </tr>
         }
     </tbody>

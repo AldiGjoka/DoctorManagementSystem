@@ -1,0 +1,61 @@
+﻿@page "/pacientet/{pacientId}"
+
+<div class="row mb-3 ms-2">
+    <label for="name" class="col-sm-3 form-label">Patient personal number:</label>
+    <div class="col-sm-5">
+        @Pacient.PersonalNumber
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <label for="name" class="col-sm-3 form-label">Patient name:</label>
+    <div class="col-sm-5">
+        @Pacient.FirstName
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <label for="name" class="col-sm-3 form-label">Patient surname:</label>
+    <div class="col-sm-5">
+        @Pacient.LastName
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <label for="name" class="col-sm-3 form-label">Patient birthdate:</label>
+    <div class="col-sm-5">
+        @Pacient.Birthdate
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <label for="name" class="col-sm-3 form-label">Patient gender:</label>
+    <div class="col-sm-5">
+        @Pacient.Gender
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <label for="name" class="col-sm-3 form-label">Patient email:</label>
+    <div class="col-sm-5">
+        @Pacient.Email
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <div class="col-sm-3">
+        <button class="btn btn-primary" @onclick="(() => HandleShtoReceteClick(Pacient.PatientId))">Add recete</button>
+    </div>
+    
+    <div class="col-sm-3">
+        <button class="btn btn-primary">Add appointment</button>
+    </div>
+</div>
+
+<div class="row mb-3 ms-2">
+    <div class="col-sm-3">
+        <button class="btn btn-primary" @onclick="(() => HandleShikoRecetatClick(Pacient.PatientId))">Shiko recetat</button>
+    </div>
+</div>
+
+
