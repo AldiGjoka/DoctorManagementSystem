@@ -37,7 +37,7 @@ namespace DoctorManagementUI.Pages
 
             if (response.IsSuccessStatusCode)
             {
-                await jSRuntime.InvokeVoidAsync("alert", "UserName or password is incorrect");
+                await jSRuntime.InvokeVoidAsync("alert", "Pacienti u ruajt me sukses");
                 Pacient = new PacientRequestVM();
             }
             else

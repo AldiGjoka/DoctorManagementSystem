@@ -1,0 +1,42 @@
+﻿@page "/appointment/{patientId}"
+
+<h3>Add Appointment</h3>
+
+<div class="row mb-3 ms-2"></div>
+
+<EditForm Model="@Appointment" OnValidSubmit="@HandleValidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+    <div class="row mb-3 ms-2">
+        <label for="AppointmentDate" class="col-sm-3 form-label">Appointment Date:</label>
+        <div class="col-sm-5">
+            <InputDate id="AppointmentDate" class="form-control" @bind-Value="@Appointment.AppointmentDate" placeholder="Appointment Date"></InputDate>
+            <ValidationMessage For="@(() => Appointment.AppointmentDate)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="StartTime" class="col-sm-3 form-label">Appointment Start time</label>
+        <div class="col-sm-5">
+            <InputText id="StartTime" class="form-control" @bind-Value="@Appointment.StartTime" placeholder="Start Time"></InputText>
+            <ValidationMessage For="@(() => Appointment.StartTime)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="EndTime" class="col-sm-3 form-label">Appointment End Time</label>
+        <div class="col-sm-5">
+            <InputText id="EndTime" class="form-control" @bind-Value="@Appointment.EndTime" placeholder="End Time"></InputText>
+            <ValidationMessage For="@(() => Appointment.EndTime)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2"></div>
+
+    <button type="submit" class="submit-button mt-3">Create Appointment</button>
+
+</EditForm>
+
+

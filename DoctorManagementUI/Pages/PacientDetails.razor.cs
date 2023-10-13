@@ -51,5 +51,10 @@ namespace DoctorManagementUI.Pages
         {
             _navigationManager.NavigateTo($"/recete/details/{patientId}");
         }
+
+        protected void HandleAddAppointmentClick(int patientId)
+        {
+            _navigationManager.NavigateTo($"/appointment/{patientId}");
+        }
     }
 }

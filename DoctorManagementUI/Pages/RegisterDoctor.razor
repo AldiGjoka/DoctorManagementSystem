@@ -1,0 +1,113 @@
+﻿@page "/register/doctor"
+
+<h3>RegisterDoctor</h3>
+
+
+<EditForm Model="@registerDoctorVM" OnValidSubmit="@HandleValidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor personal number:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.PersonalNumber"
+                       placeholder="Enter Docotor personal number"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.PersonalNumber)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor name:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.FirstName" placeholder="Enter Docotor name"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.FirstName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor surname:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.LastName" placeholder="Enter Docotor surname"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.LastName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor Specialization:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.Specialization" placeholder="Enter Docotor Specialization"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.Specialization)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor email:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.Email" placeholder="Enter Docotor email"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.Email)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor email:</label>
+        <div class="col-sm-5">
+            <InputText type="password" id="name" class="form-control" @bind-Value="@registerDoctorVM.Password" placeholder="Enter Docotor email"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.Email)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor PhoneNumber:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.PhoneNumber" placeholder="Enter Docotor PhoneNumber"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.PhoneNumber)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor State:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.State" placeholder="Enter Docotor State"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.State)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor City:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.City" placeholder="Enter Docotor City"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.City)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor Country:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.Country" placeholder="Enter Docotor Country"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.Country)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor StreetName:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.StreetName" placeholder="Enter Docotor StreetName"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.StreetName)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Docotor PostalCode:</label>
+        <div class="col-sm-5">
+            <InputText id="name" class="form-control" @bind-Value="@registerDoctorVM.PostalCode" placeholder="Enter Docotor PostalCode"></InputText>
+            <ValidationMessage For="@(() => registerDoctorVM.PostalCode)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-2"></div>
+
+    <button type="submit" class="submit-button mt-3">Save Docotor</button>
+</EditForm>
+
+

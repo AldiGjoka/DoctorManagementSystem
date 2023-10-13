@@ -75,7 +75,7 @@ namespace DoctorManagementUI.Pages
 
         protected async Task<string> GetDoctorId(string email)
         {
-            var doctor = await _httpClient.GetFromJsonAsync<DoctorResponseVM>("https://localhost:7137/api/doctor/email/aldi%40email.com");
+            var doctor = await _httpClient.GetFromJsonAsync<DoctorResponseVM>($"https://localhost:7137/api/doctor/email/{email}");
 
             return doctor.doctorId.ToString();
         }
