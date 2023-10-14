@@ -39,8 +39,6 @@ namespace DoctorManagementUI.Pages
             Receta.Prescriptions = new List<PrescriptionVM>();
             var pres = new PrescriptionVM();
             Receta.Prescriptions.Add(pres);
-            var presTwo = new PrescriptionVM();
-            Receta.Prescriptions.Add(presTwo);
         }
 
 
@@ -61,7 +59,7 @@ namespace DoctorManagementUI.Pages
             if (response.IsSuccessStatusCode)
             {
                 await jSRuntime.InvokeVoidAsync("alert", "U ruajt me sukses");
-                Receta = new RecetaVM();
+                //Receta = new RecetaVM();
             }
             else
             {
